@@ -1,0 +1,27 @@
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-image: url('./Images/bg1.jpg');
+  background-repeat: no-repeat;
+background-size: cover;
+}
+
+.app-container {
+  /* Set max-width for the content container */
+  max-width: 800px; /* Adjust as needed */
+  width: 100%;
+  padding: 0 20px; /* Add space on left and right sides */
+  font-family: 'Times New Roman', Times, serif;
+ 
+}
+
+/* Additional styling for individual components */
+.register-container,
+.login-container,
+.home-container {
+  /* Add your component-specific styles here */
+}
