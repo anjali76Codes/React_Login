@@ -7,7 +7,7 @@ import Container from 'react-bootstrap/Container';
 import Form from 'react-bootstrap/Form';
 import { auth } from '../../firebase'; // Import Firebase auth object
 import './Login.css'; // Import your CSS file for styling
-import { signInWithEmailAndPassword } from 'firebase/auth';
+import { signInWithEmailAndPassword, sendPasswordResetEmail } from 'firebase/auth'; // Import sendPasswordResetEmail function from firebase/auth
 
 function Login() {
   const navigate = useNavigate();
@@ -20,12 +20,23 @@ function Login() {
 
     try {
       // Sign in user with Firebase Auth
-      const userCredential = await signInWithEmailAndPassword(auth ,email, password);
+      const userCredential = await signInWithEmailAndPassword(auth, email, password);
       console.log('User signed in:', userCredential.user);
       navigate('/'); // Redirect to home page after successful login
     } catch (error) {
       setError("Failed to login. Please check your credentials."); // Display error message
       console.error('Error logging in:', error);
+    }
+  };
+
+  const handleForgotPassword = async () => {
+    try {
+      await sendPasswordResetEmail(auth, email);
+      alert('Password reset email sent. Check your inbox!');
+      // Optionally, you can redirect the user after sending the email
+    } catch (error) {
+      setError('Failed to send reset email. Check your email address.');
+      console.error('Error sending reset email:', error);
     }
   };
 
@@ -54,6 +65,10 @@ function Login() {
           />
         </Form.Group>
 
+        <p className="forgot-password-text">
+          <Link onClick={handleForgotPassword}>Forgot Password?</Link>
+        </p>
+
         <Button variant="primary" type="submit" className="login-btn">
           Login
         </Button>
@@ -61,6 +76,8 @@ function Login() {
         <p className="new-user-text">
           New user? <Link to="/register">Sign Up here</Link>
         </p>
+
+       
       </Form>
     </Container>
   );
