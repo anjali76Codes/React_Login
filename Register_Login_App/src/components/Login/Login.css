@@ -100,3 +100,12 @@
 .new-user-text a:hover {
   color: #0056b3;
 }
+
+
+.error-message {
+  color: rgb(251, 250, 250);
+  margin-bottom: 10px;
+  background-color: rgb(245, 113, 4);
+height: 25px;
+padding: 5px;
+}

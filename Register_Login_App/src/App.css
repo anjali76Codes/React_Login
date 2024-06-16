@@ -7,21 +7,30 @@ body {
   height: 100vh;
   background-image: url('./Images/bg1.jpg');
   background-repeat: no-repeat;
-background-size: cover;
+  background-size: cover;
 }
 
 .app-container {
-  /* Set max-width for the content container */
   max-width: 800px; /* Adjust as needed */
   width: 100%;
-  padding: 0 20px; /* Add space on left and right sides */
+  padding: 20px; /* Add space on all sides */
   font-family: 'Times New Roman', Times, serif;
- 
+  background-color: rgba(255, 255, 255, 0.9); /* Slightly transparent background */
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Light color box shadow */
+  transition: box-shadow 0.3s ease, transform 0.3s ease; /* Transition for smooth effect */
+}
+
+.app-container:hover {
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4); /* Darker shadow on hover */
+  transform: scale(1.02); /* Slightly increase size on hover */
 }
 
 /* Additional styling for individual components */
 .register-container,
 .login-container,
-.home-container {
+.home-container  :hover{
+
+ 
   /* Add your component-specific styles here */
 }

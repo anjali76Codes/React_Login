@@ -16,12 +16,14 @@ function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={isLoggedIn ? <Navigate to="/home" /> : <Register onSignUpSuccess={handleSignUpSuccess} />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/home" element={<Home />} /> {/* Define a route for the Home component */}
+      <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register/>}  />
+        <Route path="/" element={<Home />} /> {/* Define a route for the Home component */}
       </Routes>
     </Router>
   );
 }
 
 export default App;
+
+
