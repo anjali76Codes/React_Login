@@ -7,7 +7,8 @@ import Container from 'react-bootstrap/Container';
 import Form from 'react-bootstrap/Form';
 import { auth } from '../../firebase'; // Import Firebase auth object
 import './Login.css'; // Import your CSS file for styling
-import { signInWithEmailAndPassword, sendPasswordResetEmail } from 'firebase/auth'; // Import sendPasswordResetEmail function from firebase/auth
+import { signInWithEmailAndPassword } from 'firebase/auth';
+import { sendPasswordResetEmail } from 'firebase/auth';
 
 function Login() {
   const navigate = useNavigate();
